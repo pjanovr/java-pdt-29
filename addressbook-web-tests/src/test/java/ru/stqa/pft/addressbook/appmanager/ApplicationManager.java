@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -8,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * Created by roman.pianov on 19.04.2016.
  */
 public class ApplicationManager {
+
   private FirefoxDriver wd;
   private ContactHelper contactHelper;
   private SessionHelper sessionHelper;
