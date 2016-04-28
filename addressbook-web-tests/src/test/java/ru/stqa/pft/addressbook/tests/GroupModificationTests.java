@@ -10,7 +10,7 @@ public class GroupModificationTests extends TestBase {
 
   @Test
   public void testGroupModification(){
-    app.getNavigationHelper().gotoGropPage();
+    app.getNavigationHelper().gotoGroupPage();
     app.getGroupHelper().selectGroup();
     app.getGroupHelper().initGroupModification();
     app.getGroupHelper().fillGroupFrom(new GropData("test1","test1", "test1"));
