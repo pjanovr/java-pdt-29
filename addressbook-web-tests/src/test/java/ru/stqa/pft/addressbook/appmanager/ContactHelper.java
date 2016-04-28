@@ -52,4 +52,13 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
+  public void crateContact(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact);
+    submitContactCreation();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }

@@ -27,7 +27,7 @@ public class GroupHelper extends HelperBase {
     type(By.name("group_footer"), gropData.getFooter());
   }
 
-  public void initGropCreation() {
+  public void initGroupCreation() {
     click(By.name("new"));
   }
 
@@ -48,7 +48,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public void crateGroup(GroupData group) {
-    initGropCreation();
+    initGroupCreation();
     fillGroupFrom(group);
     submitGroupCreation();
     returnToGroupPage();
