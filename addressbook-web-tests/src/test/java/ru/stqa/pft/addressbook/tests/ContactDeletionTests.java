@@ -13,16 +13,16 @@ public class ContactDeletionTests extends TestBase {
 
   @Test
   public void testContactDeletion() {
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
       app.getContactHelper().crateContact(new ContactData("test1", "test2", "test3", "Saint Petersburg", "11223344", "testemail@mail.ru"));
-      app.getNavigationHelper().returnToHomePage();
+      app.goTo().returnToHomePage();
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().selectContact(before.size() - 1);
     app.getContactHelper().initDeleteContact();
     app.getContactHelper().confirmContactDeletion();
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size() - 1);
     before.remove(before.size() - 1);

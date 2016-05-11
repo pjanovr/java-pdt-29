@@ -13,17 +13,17 @@ import java.util.List;
 public class ContactModificationTests extends TestBase {
   @Test
   public void testModificationContact() {
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
       app.getContactHelper().crateContact(new ContactData("test1", "test2", "test3", "Saint Petersburg", "11223344", "testemail@mail.ru"));
-      app.getNavigationHelper().returnToHomePage();
+      app.goTo().returnToHomePage();
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     ContactData contact = new ContactData(before.get(before.size()-1).getId(), "test1_modify", "test2_modify", "test3_modify", "Saint Petersburg_modify", "0999999", "testemail_modify@mail.ru");
     app.getContactHelper().initModifyContact(before.size() - 1);
     app.getContactHelper().fillContactForm(contact);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().returnToHomePage();
+    app.goTo().returnToHomePage();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size());
 
