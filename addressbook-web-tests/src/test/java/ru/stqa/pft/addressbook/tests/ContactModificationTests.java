@@ -38,12 +38,9 @@ public class ContactModificationTests extends TestBase {
             .withHomephone("0999999").withEmail("testemail_modify@mail.ru");
     app.contact().modify(contact);
     app.goTo().returnToHomePage();
-    Contacts after = app.contact().all();
 
-    assertEquals(after.size(), before.size());
-    before.remove(modifiedContact);
-    before.add(contact);
-    assertEquals(before, after);
+    assertEquals(app.contact().count(), before.size());
+    Contacts after = app.contact().all();
     assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
   }
 

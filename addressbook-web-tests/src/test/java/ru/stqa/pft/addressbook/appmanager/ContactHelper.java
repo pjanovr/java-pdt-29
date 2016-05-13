@@ -80,6 +80,9 @@ public class ContactHelper extends HelperBase {
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
   }
+  public int count() {
+    return wd.findElements(By.name("selected[]")).size();
+  }
 
   public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<>();
@@ -94,6 +97,7 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
+
   private Contacts contactCache = null;
 
   public Contacts all() {
