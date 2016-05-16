@@ -14,6 +14,7 @@ public class ContactData {
   private String email3;
   private String allEmails;
   private String allPhones;
+  public String allInfo;
 
   public ContactData withId(int id) {
     this.id = id;
@@ -77,6 +78,10 @@ public class ContactData {
     this.allEmails = allEmails;
     return this;
   }
+  public ContactData withFullInfo(String allInfo) {
+    this.allInfo = allInfo;
+    return this;
+  }
 
   public int getId() {
     return id;
@@ -130,12 +135,27 @@ public class ContactData {
     return allPhones;
   }
 
+  public String getFullInfo() {
+    return allInfo;
+  }
+
   @Override
   public String toString() {
     return "ContactData{" +
             "id=" + id +
             ", firstname='" + firstname + '\'' +
+            ", middlename='" + middlename + '\'' +
             ", lastname='" + lastname + '\'' +
+            ", address='" + address + '\'' +
+            ", homePhone='" + homePhone + '\'' +
+            ", mobilePhone='" + mobilePhone + '\'' +
+            ", workPhone='" + workPhone + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            ", allEmails='" + allEmails + '\'' +
+            ", allPhones='" + allPhones + '\'' +
+            ", allInfo='" + allInfo + '\'' +
             '}';
   }
 
@@ -159,7 +179,5 @@ public class ContactData {
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     return result;
   }
-
-
 
 }
