@@ -1,0 +1,42 @@
+<list>
+  <contact>
+    <firstname>firstname 0</firstname>
+    <middlename>middlename 0</middlename>
+    <lastname>lastname 0</lastname>
+    <address>test address 0</address>
+    <homePhone>11110</homePhone>
+    <email>testmail0@mail.ru</email>
+  </contact>
+  <contact>
+    <firstname>firstname 1</firstname>
+    <middlename>middlename 1</middlename>
+    <lastname>lastname 1</lastname>
+    <address>test address 1</address>
+    <homePhone>11111</homePhone>
+    <email>testmail1@mail.ru</email>
+  </contact>
+  <contact>
+    <firstname>firstname 2</firstname>
+    <middlename>middlename 2</middlename>
+    <lastname>lastname 2</lastname>
+    <address>test address 2</address>
+    <homePhone>11112</homePhone>
+    <email>testmail2@mail.ru</email>
+  </contact>
+  <contact>
+    <firstname>firstname 3</firstname>
+    <middlename>middlename 3</middlename>
+    <lastname>lastname 3</lastname>
+    <address>test address 3</address>
+    <homePhone>11113</homePhone>
+    <email>testmail3@mail.ru</email>
+  </contact>
+  <contact>
+    <firstname>firstname 4</firstname>
+    <middlename>middlename 4</middlename>
+    <lastname>lastname 4</lastname>
+    <address>test address 4</address>
+    <homePhone>11114</homePhone>
+    <email>testmail4@mail.ru</email>
+  </contact>
+</list>
