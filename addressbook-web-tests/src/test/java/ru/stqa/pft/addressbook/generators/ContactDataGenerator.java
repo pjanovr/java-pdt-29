@@ -8,7 +8,6 @@ import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
