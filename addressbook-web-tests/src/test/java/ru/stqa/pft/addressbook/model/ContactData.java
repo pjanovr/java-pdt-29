@@ -7,60 +7,63 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
-@Table(name="addressbook")
+@Table(name = "addressbook")
 @XStreamAlias("contact")
 public class ContactData {
 
   @XStreamOmitField
   @Id
-  @Column(name="id")
+  @Column(name = "id")
   private int id = Integer.MAX_VALUE;
 
   @Expose
-  @Column(name="firstname")
+  @Column(name = "firstname")
   private String firstname;
 
   @Expose
-  @Column(name="middlename")
+  @Column(name = "middlename")
   private String middlename;
 
   @Expose
-  @Column(name="lastname")
+  @Column(name = "lastname")
   private String lastname;
 
   @Expose
-  @Column(name="address")
+  @Column(name = "address")
   @Type(type = "text")
   private String address;
 
   @Expose
-  @Column(name="home")
+  @Column(name = "home")
   @Type(type = "text")
   private String homePhone;
 
   @Expose
-  @Column(name="mobile")
+  @Column(name = "mobile")
   @Type(type = "text")
   private String mobilePhone;
 
   @Expose
-  @Column(name="work")
+  @Column(name = "work")
   @Type(type = "text")
   private String workPhone;
 
   @Expose
-  @Column(name="email")
+  @Column(name = "email")
   @Type(type = "text")
   private String email;
 
   @Expose
-  @Column(name="email2")
+  @Column(name = "email2")
   @Type(type = "text")
   private String email2;
 
   @Expose
-  @Column(name="email3")
+  @Column(name = "email3")
   @Type(type = "text")
   private String email3;
 
@@ -72,10 +75,14 @@ public class ContactData {
   @Transient
   private String allInfo;
 
-  @Column(name="photo")
+  @Column(name = "photo")
   @Type(type = "text")
   private String photo;
 
+
+  @ManyToMany
+  @JoinTable(name = "address_in_groups", joinColumns= @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
 
   public ContactData withId(int id) {
     this.id = id;
@@ -208,6 +215,11 @@ public class ContactData {
     return allInfo;
   }
 
+  public Groups getGroups() {
+    return new Groups(groups);
+  }
+
+
  /* public File getPhoto() {
 
     return new File(photo);
@@ -254,4 +266,8 @@ public class ContactData {
     return result;
   }
 
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
 }
