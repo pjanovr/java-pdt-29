@@ -39,20 +39,31 @@ public class ContactData {
   @Type(type = "text")
   private String homePhone;
 
+  @Expose
   @Column(name="mobile")
   @Type(type = "text")
   private String mobilePhone;
 
+  @Expose
   @Column(name="work")
   @Type(type = "text")
   private String workPhone;
+
   @Expose
-  @Transient
+  @Column(name="email")
+  @Type(type = "text")
   private String email;
-  @Transient
+
+  @Expose
+  @Column(name="email2")
+  @Type(type = "text")
   private String email2;
-  @Transient
+
+  @Expose
+  @Column(name="email3")
+  @Type(type = "text")
   private String email3;
+
   @Transient
   private String allEmails;
 
@@ -197,10 +208,10 @@ public class ContactData {
     return allInfo;
   }
 
-  public File getPhoto() {
+ /* public File getPhoto() {
 
     return new File(photo);
-  }
+  }*/
 
   @Override
   public String toString() {
